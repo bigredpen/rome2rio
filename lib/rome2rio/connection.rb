@@ -24,7 +24,7 @@ module Rome2rio
       flags = opts[:flags]
       opts[:flags] = SearchRequestFlags.new(flags)  if flags.is_a?(Symbol) or flags.is_a?(Array)
 
-      request = "/api/1.2/json/Search?#{encode_params(opts)}"
+      request = "/api/1.4/json/Search?#{encode_params(opts)}"
 
       handle_response(Faraday.new(:url => @endpoint).get(request))
 
